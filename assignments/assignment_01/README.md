@@ -89,13 +89,15 @@ git add assignments/ # add assignments to documents being tracked
 git commit -m "assignment_01 all changes"
 git push # push to github
 git log
-# go to github to verify that it worked 
+
+### go to github to verify that it worked 
 
 
 # my questions
 ### 1. what would have been a more efficient way of navigating these subdirectories? 
 ### 2. why did I encounter issues copying over one of my own csv files? (it told me that the directory that I was moving the file to was not found)
 ### 3. is there a better way of finding the right paths for your files? I can see this becoming very confusing and time intensive with my own research folders that have hundreds of entries and sub folders 
+### 4. what is the .DS_Store file and why does it say that it is untracked by Git?
 
 
 
