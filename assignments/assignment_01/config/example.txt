@@ -1,0 +1,1 @@
+I am not sure what would be held in a 'config' folder. I'm assuming that it wouldn't be a text file but would be some file type containing the settings for a program? Perhaps like the one we use to run our automated RNA extraction machine (his name is Bender and we do not get along) 
