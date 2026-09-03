@@ -1,0 +1,9 @@
+# Class 2 - 09/3/26 
+
+These are some commands discussed previously
+
+```
+cp
+mv
+mkdir
+```

@@ -1,0 +1,75 @@
+# Assignment 00 
+# involved making a git repository accessible from GitHub and made a copy from this onto our computer 
+# remote = the github repository version on GithUb website
+# local = my computer 
+
+# this is how you clone a git repository 
+# enter the folder where you want to clone it 
+git clone https://github.com/iadanforth/SUPERCOMPUTING
+
+
+### USEFUL COMMANDS ### 
+# cd ~  = home 
+# ls = list
+# pwd = print working directry
+# mkdir = make directory
+ls --help
+cat - concatenates contents of file on a scrren
+:q! "enter" sends you out of vim
+########################
+
+# ALL ASSIGNMENTS WILL BE PUSHED WITH THE FOLLOWING PROCESS 
+# lets change a document and push to git hub 
+# nano README.md will enter the file and allow you to edit it
+# type something random 
+# now push to github
+git status 
+# tells you status of git repository that you're in 
+git add README.md  
+# will add this new edited file 
+git commit -m "added a sentence about E. huxleyi"
+# the command -m references the addition of a message
+git push 
+# pushes this to git hub - you should now be able to see your change on github 
+git log 
+# shows you your history - this allows you to reference previous committs 
+
+# ABSOLUTE FILE PATH = full description of the file on your computer starting from the root 
+# RELATIVE FILE PATH = from where you are right nnow 
+# for scripting, you want a relative file path because this allows two computers ot have reproducibility 
+# best practice to keep code, data and outputs separate 
+
+# using these file paths, we're going to build a project directory 
+# recommendations: project - data, scripts, outputs, README.md 
+
+# prefers snake case (this is enforced when naming your files)
+
+# build out directory structure for whole semester 
+mkdir assignments 
+ls -a 
+# returns a . and .. 
+# . = this directory, .. = parent directory 
+# .. parent directory = SUPERCOMPUTING 
+# -a = shows hidden files 
+ls - a = list all 
+ls -h = list human?
+ls --help = all the information on the ls command 
+# . as first character of any file = hidden file 
+ls -al # lists all files including hidden ones in long wise (as opposed to next to one another)
+# when you do this, you get a lot of info
+# drwxr-xr-x = means that I can read, write and execute, members of my group can execute (x) and read (r) and people outside of my organization can execute but can't change file 
+# now we want to create a folder for each assignment
+mkdir assignment_{01..08} ### redo this commad
+
+# temporarily switch to bash
+chsh -s /bin/zsh <- switch to zsh
+chsh -s /bin/bash <- switch to bash
+
+# if you encounter git issue 
+try git stash
+
+############# ASSIGNMENT 1 ###############
+# empty file creation
+touch empty_file
+# you can create a touch file that will touch your files once a month because on the supercomputer, 
+the files get deleted when they are not opened 

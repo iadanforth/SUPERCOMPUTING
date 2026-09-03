@@ -1,0 +1,39 @@
+# Class 1 review - 090226
+
+## CLONING A GIT REPOSITORY
+ - enter the directory where the git repository lies and run "git clone" followed by the url
+ - this clones the repository to your machine FROM the git website 
+ 
+ ## USEFUL COMMANDS
+- cd ~  = home 
+- ls = list
+- pwd = print working directry
+- mkdir = make directory
+- ls --help : will list out all of the flags for ls 
+- cat - concatenates contents of file on a scrren
+- rm -r empty_file outputs_01 scripts_01: will remove the contents of a directory 
+- :q! "enter" sends you out of vim
+- cd . : means current directory
+	- e.g.: cd ./supercomputing/assignments : gets me to the assignments folder
+- ls -al gives you detailed information like who has access, size, owner etc in long format for each file contained in a directory 
+
+## EDITING A DOCUMENT AND PUSHING TO GITHUB
+1. open a text file with "nano [name of file]". Type something random to change it 
+2. press control O to verify that you edit the right file
+3. Then return to complete 
+4. Then control X to exit
+5. Now push your changes to github 
+6. "git status": gives you the status of all of the files in your directory (i.e. which ones have been changed)
+7. "git add [name of file]": adds your file **needs to be done for all files that are being updated** 
+8. git commit -m "[message about what you changed]"
+9. git push : pushes your update to git hub 
+10. verify that this worked by going to your git hub page (it did!)
+11. git log : shows you all of your previous changes - there should be 3 
+
+## FILE PATHS 
+- ABSOLUTE FILE PATH = full description of the file on your computer starting from the root 
+- RELATIVE FILE PATH = from where you are right nnow 
+   - for scripting, you want a relative file path because this allows two computers ot have reproducibility 
+   - best practice to keep code, data and outputs separate 
+
+For the remainder of the class, we created new directories for all 8 of the assignments and discussed assignment 1 
