@@ -1,0 +1,108 @@
+Class 3: Connecting to supercomputer 
+
+ssh iadanforth@bora.sciclone.wm.edu
+
+ctrl C = "escape"
+
+exit "enter" -> exits your ssh connection
+
+## 1. setting up an alias for bora 
+	 - alias's allow you to set up shortcuts 
+	 - we're going to set up aliases on our local computer 
+
+ **Example: this will result in the word Hello being echoed when I type word** 
+	alias word='echo "Hello"'
+	word
+	Hello
+	
+	example: "alias u = 'cd ..;clearpwd;ll --group-directories-first'"
+		- this should not be included in a script because you are the only one whose alias exists on your computer 
+		- now we're going to create an alias for accessing the supercomputer 
+		- we also want our alias
+**but the problem is that alias's are not refreshable because if you close the terminal, the alias will not be stored**
+
+## 2. Ok so how do we set up a reproducible alias 
+	- cd: brings you back to your home directory 
+	- ls -al: to list all of your files 
+	- location the .zshrc (.bashrc in Windows)
+		- zsh run command
+		- every time you open the terminal, the stuff in .zshrc will run automatically 
+		
+## 3. open your .zshrc
+ 	- nano .zshrc
+ 	- just kidding, I'm running bash, so I need to open nano .bash_profile
+ 	- then type this in 
+
+alias bora='ssh iadanforth@bora.sciclone.wm.edu'
+alias ll='ls -alh'
+alias u='cd ..;clear;ll'
+alias d='cd -;clear;ll'
+
+- now exit out of the terminal and type 'alias' once you re-open it to see if the alias's worked 
+- type in your password: 17@Iloveisav!
+
+## 4. type 'bora' after setting up the alias 
+ 	- we interact with the login node of bora
+ 	- but this doesn't matter because the root for all of the servers are the same (/sciclone/home/iadanforth)
+ 	
+## 5. set up aliases in remote computer
+ 	- ls -alh: find the .bashrc file 
+ 	- nano .bashrc: open the .bashrc file 
+ 		- you can see that it's running another script (the line that you aren't supposed to remove)
+ 		
+ 	- if you want to find out what the script inside of your .bashrc is doing, you can copy that directory path and then click **cat [path of directory]**
+ 	
+ 	
+## 6. the .bashrc file is very important 
+	- figure out what contents are in it
+	- this is important because every time you log into Bora, everything in that bashrc file will get run 
+	- if there are databases that you routinely reference, you can set up these aliases 
+
+## 7. we are going to copy the SUPERCOMPUTING folder to the HPC
+ 	- this means that it will be in three places at onec 
+ 	- so every time you work on the supercomputer, you need to PULL FIRST FROM GITHUB!!!!!! 
+ 	
+## 8. to add SUPERCOMPUTING to the remote computer, you just do git clone "url"
+	 - if you want to see everything in the root of the computer, you do "cd /", then "ll"
+	 
+## 9. Now lets change a file 
+
+## 10. We can't push yet 
+- creat a programs directyr in home
+- now run this code
+wget https://github.com/cli/cli/releases/download/v2.74.0/gh_2.74.0_linux_amd64.tar.gz
+
+# unpack tarball
+tar -xf gh_2.74.0_linux_amd64.tar.gz
+
+# remove tarball after exrtraction
+rm gh_2.74.0_linux_amd64.tar.gz
+
+# the rest of this is interactive and requires browser login and authorization for github
+# it has to be done manually
+
+echo "the rest of this is interactive and requires browser login and authorization for github"
+echo "it has to be done manually"
+echo "Please run: '~/programs/gh_2.74.0_linux_amd64/bin/gh auth login'"
+echo "and follow the instructions to authorize using your browser and 2FA just like in the beginning of class."
+
+now run ~/programs/gh_2.74.0_linux_amd64/bin/gh auth login
+
+follow prompts - you will be asked to enter your GitHub token
+
+
+
+
+## Useful commands
+ - 'history' = lists your previous commands during the session
+ - ctrl C = "escape"
+ - exit "enter" -> exits your ssh connection
+ - ll - created alias
+ - u - created alias
+ - d - created 
+ - realpath .bashrc: shows you total absolute path to any file or directory
+ - control option allows you to more easily move around a txt file 
+ - if you have problem, try git stash then git pull 
+
+
+ 	
