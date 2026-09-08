@@ -1,14 +1,20 @@
 # Assignment 02 
+### 090826
 ### Isabelle Danforth
+
+* Pre-assignment: connected to W&M VPN with 'gp.wm.edu'
+
 
  
 ## Task 1: Set up your semester workspace on the HPC
+**IN SUPERCOMPUTER*
 - Go into the supercomputer with the 'bora' alias (= ssh iadanforth@bora.sciclone.wm.edu)
 - enter into your assignment_02 folder and create a new directory called "data"
 
 ```
 bora
 ls 
+cd SUPERCOMPUTING/
 cd assignments/
 ls
 cd assignment_02
@@ -18,12 +24,23 @@ ls
 ```
 
 ## Task 2: Download files from NCBI via command-line FTP
+**ON LOCAL MACHINE*
 - Go back to local machine 
 - Use ftp command to connect to the NCBI FTP server 
-- I did not know what the ftp command was, so I ran to view information on the command. and 'q' to exit.
+- I did not know what the ftp command was, so I ran to view information on the command. 
+- And 'q' to exit.
+
 ```
+exit
+pwd
 man ftp
 q
+```
+
+Enter the 'data' directory in your 'assignment_02' folder. 
+```
+cd SUPERCOMPUTING/
+tree
 ```
 Now run the following to establish ftp access with this database in NCBI
 ```
@@ -102,6 +119,7 @@ pwd
 - first, check out what md5sum is (can also consult notes in Lesson_02)
 - Essentially, this command generates a fingerprint for the file
 - Used to confirm that your FTP download and FileZilla upload did not corrupt the data 
+
 ```
 man md5sum
 q
@@ -111,9 +129,51 @@ md5sum GCF_000005845.2_ASM584v2_genomic.fna.gz
 OUTPUT 1: e1b894042b53655594a1623a7e0bb63f  GCF_000005845.2_ASM584v2_genomic.fna.gz
 OUTPUT 2: a93ff609c13f02dc9fc15255bc138401  GCF_000005845.2_ASM584v2_genomic.gff.gz
 
-Proceeded to upload the script generated here to the supercomputer
 
 ## Task 5: Create useful Bash aliases
+Ok now access your .bashrc file 
+Go to home directory
+
+```
+cd ~ 
+ll
+nano .bash_profile
+source ~/.bash_profile
+
+```
+Update your aliases following instructions on assignment 
+This caused an error. After some googling and AI'ing, I found out that this is because 
+Mac's ls command doesn't support the "--group-directories-first" flag. 
+My solution to this was to install GNU coreutile with Homebrew
+
+```
+brew install coreutils
+```
+
+Ok now go back to your .bash profile and update the aliases 
+
+```
+nano .bash_profile
+source ~/.bash_profile
+```
+
+Now they work! 
+Here's what they mean:
+
+alias u='cd ..;clear;pwd;gls -alFh --group-directories-first'
+ - this says "go back one directory level, clear the terminal screen, print the current directory and list everything in that directory. 
+ - The -a flag says that I want hidden files shown, in long format (-l) with the type of file shown by symbols (-F) and to only show file sizes human readable (-h). 
+ - The --group-directories first call is saying to list the directories first in the list.
+
+alias d='cd -;clear;pwd;gls -alFh --group-directories-first'
+ - this is similar to u command, except that the "cd -" means to go back to whatever directory you were last in (has nothing to do with the structure of your directories.
+ - Then 'clear' means wipe the terminal screen, 'pwd' says to print the current directory
+ - the flags say to list all files starting with the directories in a long format. Symbols designate file types (-F) and file sizes are reported in a human readable format (-h)
+
+alias ll='gls -alFh --group-directories-first'
+- here, the gls is the GNU version of ls, so it's just saying to list all of the file types in long format, starting with the directories. 
+- As with the previous two aliases, the -F flag says to tell me what type of file it is using symbols and -h means to list file sizes in a human readable format
+
 
 
 
