@@ -1,3 +1,7 @@
+# Changing the file for class 3 - working on connecting GitHub to supercomputer
+
+
+
 # assignment_01_script
 
 ### from home directory, check your location
