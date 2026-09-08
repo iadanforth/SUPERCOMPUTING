@@ -7,7 +7,7 @@
 
  
 ## Task 1: Set up your semester workspace on the HPC
-**IN SUPERCOMPUTER*
+**ON HPC**
 - Go into the supercomputer with the 'bora' alias (= ssh iadanforth@bora.sciclone.wm.edu)
 - enter into your assignment_02 folder and create a new directory called "data"
 
@@ -41,17 +41,18 @@ Enter the 'data' directory in your 'assignment_02' folder.
 ```
 cd SUPERCOMPUTING/
 tree
+cd assignments/assignment_02/data
 ```
 Now run the following to establish ftp access with this database in NCBI
 ```
 ftp ftp.ncbi.nlm.nih.gov
 ```
 I got an error message saying that the 'ftp' command was not found
-ran 
+I ran the following to install ftp-style command
 ```
 brew install inetutils
 ```
-to install ftp-style command
+
 this worked and I then re-ran
 ```
 ftp ftp.ncbi.nlm.nih.gov
@@ -69,9 +70,12 @@ get GCF_000005845.2_ASM584v2_genomic.gff.gz
 ```
 
 ## Task 3: File transfer and permissions
-go back to the LOCAL computer
+
+**ON LOCAL MACHINE**
+Get out of the FTP system by typing 'bye'
 ```
 bye
+pwd
 ```
 check that you now have the two files that you wanted 
 ```
@@ -79,22 +83,26 @@ ls
 ```
 - yay, they are there 
 - now open FileZilla and follow prompts in assignment
-- now upload the two files to REMOTE computer
+- upload the two files to REMOTE computer
 - You can do this by going to where the files are stored on your local computer (left side of the 
 FileZilla screen), clicking them both and dragging them to where you want them to appear 
 on the REMOTE computer (inside of the 'data' folder nested within 'assignment_02)
 
 ### check the permissions of the files 
 on your local computers terminal, type 
+**ON HPC*
+
 ```
 bora
 cd SUPERCOMPUTING/assignments/assignment_02
 ls
 cd data
+ls
 ```
+
 yes, the two files appear there!
 now check their permissions
-**note: ll is an alias for ls -alh*
+*note: ll is an alias for ls -alh that we set up in class*
 ```
 ll
 ```
@@ -107,10 +115,11 @@ chmod a+r GCF_000005845.2_ASM584v2_genomic.fna.gz
 chmod a+r GCF_000005845.2_ASM584v2_genomic.gff.gz
 ```
 now check that it worked 
-it did! I think? Permisssions now read "-rw-r--r--."
+it did! I think? Permissions now read "-rw-r--r--."
 
 ## Task 4: Verify file integrity with md5sum
-- exit out of the remote computer and check where you are on the local computer
+**ON LOCAL MACHINE*
+exit out of the remote computer and check where you are on the local computer
 ```
 exit
 pwd
@@ -124,35 +133,46 @@ pwd
 man md5sum
 q
 md5sum GCF_000005845.2_ASM584v2_genomic.fna.gz
-
+md5sum GCF_000005845.2_ASM584v2_genomic.gff.gz
 ```
-OUTPUT 1: e1b894042b53655594a1623a7e0bb63f  GCF_000005845.2_ASM584v2_genomic.fna.gz
-OUTPUT 2: a93ff609c13f02dc9fc15255bc138401  GCF_000005845.2_ASM584v2_genomic.gff.gz
 
+- OUTPUT 1: c13d459b5caa702ff7e1f26fe44b8ad7  GCF_000005845.2_ASM584v2_genomic.fna.gz
+- OUTPUT 2: 0f52ffc94af5ddf544ff89cc6f546b0c  GCF_000005845.2_ASM584v2_genomic.gff.gz
+
+**ON HPC**
+now go to bora and run the same md5sum commands there. Copy and past the outputs
+```
+bora
+cd SUPERCOMPUTING/assignments/assignment_02/data
+md5sum GCF_000005845.2_ASM584v2_genomic.fna.gz
+md5sum GCF_000005845.2_ASM584v2_genomic.gff.gz
+```
+
+- OUTPUT 1: c13d459b5caa702ff7e1f26fe44b8ad7  GCF_000005845.2_ASM584v2_genomic.fna.gz
+- OUTPUT 2: 0f52ffc94af5ddf544ff89cc6f546b0c  GCF_000005845.2_ASM584v2_genomic.gff.gz
+
+
+Amazing, the output run from local machine and from HPC match.
 
 ## Task 5: Create useful Bash aliases
+**ON LOCAL MACHINE**
 Ok now access your .bashrc file 
 Go to home directory
 
 ```
+exit
 cd ~ 
 ll
 nano .bash_profile
-source ~/.bash_profile
-
 ```
 Update your aliases following instructions on assignment 
-This caused an error. After some googling and AI'ing, I found out that this is because 
+Copy and pasting the exact code from the assignment initially caused an error. 
+After some googling and AI'ing, I found out that this is because 
 Mac's ls command doesn't support the "--group-directories-first" flag. 
 My solution to this was to install GNU coreutile with Homebrew
 
 ```
 brew install coreutils
-```
-
-Ok now go back to your .bash profile and update the aliases 
-
-```
 nano .bash_profile
 source ~/.bash_profile
 ```
@@ -174,6 +194,15 @@ alias ll='gls -alFh --group-directories-first'
 - here, the gls is the GNU version of ls, so it's just saying to list all of the file types in long format, starting with the directories. 
 - As with the previous two aliases, the -F flag says to tell me what type of file it is using symbols and -h means to list file sizes in a human readable format
 
+## REFLECTION
 
+Documenting all of the steps that I took throughout this assignment was made easier by having the README file 
+open in BBedit. This allowed me to write in the document as I was actually carrying out the commands in my terminal. 
+Keeping track of where I was (HPC vs local machine) was also very helpful, though I kept getting worried that 
+I'd accidentally cause a merge conflict by going back and forth between the two computers. The primary challenge 
+was working on a Mac, where some of the flags and command (e.g. 'ftp') have been discontinued for Macs. 
+However, this was easy to fix using Homebrew. I also really enjoyed the exercise of translating the alias's. Translating code 
+into sentences that I can understand really helped me to learn R language and it has also been very helpful when trying 
+to learn shell commands and syntax. 
 
 
