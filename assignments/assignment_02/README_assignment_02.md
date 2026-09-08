@@ -89,7 +89,7 @@ FileZilla screen), clicking them both and dragging them to where you want them t
 on the REMOTE computer (inside of the 'data' folder nested within 'assignment_02)
 
 ### Check the permissions of the files 
-**ON HPC***
+**ON HPC**
 - from local computer, type:
 ```
 bora
@@ -118,7 +118,7 @@ now check that it worked
 it did! I think? Permissions now read "-rw-r--r--."
 
 ## Task 4: Verify file integrity with md5sum
-**ON LOCAL MACHINE***
+**ON LOCAL MACHINE**
 - exit out of the remote computer and check where you are on the local computer
 ```
 exit
@@ -156,8 +156,8 @@ Amazing, the output run from local machine and from HPC match.
 
 ## Task 5: Create useful Bash aliases
 **ON LOCAL MACHINE**
-Ok now access your .bashrc file 
-Go to home directory
+- Ok now access your .bashrc file 
+- Go to home directory
 
 ```
 exit
