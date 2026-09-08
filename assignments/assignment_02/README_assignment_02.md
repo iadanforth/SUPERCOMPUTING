@@ -24,7 +24,7 @@ ls
 ```
 
 ## Task 2: Download files from NCBI via command-line FTP
-**ON LOCAL MACHINE*
+**ON LOCAL MACHINE**
 - Go back to local machine 
 - Use ftp command to connect to the NCBI FTP server 
 - I did not know what the ftp command was, so I ran to view information on the command. 
@@ -72,7 +72,7 @@ get GCF_000005845.2_ASM584v2_genomic.gff.gz
 ## Task 3: File transfer and permissions
 
 **ON LOCAL MACHINE**
-Get out of the FTP system by typing 'bye'
+- Get out of the FTP system by typing 'bye'
 ```
 bye
 pwd
@@ -88,10 +88,9 @@ ls
 FileZilla screen), clicking them both and dragging them to where you want them to appear 
 on the REMOTE computer (inside of the 'data' folder nested within 'assignment_02)
 
-### check the permissions of the files 
-on your local computers terminal, type 
-**ON HPC*
-
+### Check the permissions of the files 
+**ON HPC***
+- from local computer, type:
 ```
 bora
 cd SUPERCOMPUTING/assignments/assignment_02
@@ -102,6 +101,7 @@ ls
 
 yes, the two files appear there!
 now check their permissions
+
 *note: ll is an alias for ls -alh that we set up in class*
 ```
 ll
@@ -118,8 +118,8 @@ now check that it worked
 it did! I think? Permissions now read "-rw-r--r--."
 
 ## Task 4: Verify file integrity with md5sum
-**ON LOCAL MACHINE*
-exit out of the remote computer and check where you are on the local computer
+**ON LOCAL MACHINE***
+- exit out of the remote computer and check where you are on the local computer
 ```
 exit
 pwd
