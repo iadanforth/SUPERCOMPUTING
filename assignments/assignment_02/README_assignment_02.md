@@ -4,6 +4,16 @@
 
 * Pre-assignment: connected to W&M VPN with 'gp.wm.edu'
 
+**SUMMARY OF ASSIGNMENT*
+
+In this assignment, we first logged into the supercomputer and created the directory that we want to use for the assignment.
+We then went back to our local machine and used the **ftp** command to connect to the NCBI database. In the database, we navigated to where the files 
+we want are and used the **get** command to download them to our local machine. This must be done from the folder where you want to the data to appear. 
+We then used FileZilla to transfer these two files from the local machine to the HPC. We then used the **ll** command to see what the file 
+permissions are for these two files, and then the **chmod a+r** command to change the file permissions to read and write for all. Lastly, we 
+verified that the file was not corrupted during the transfer to the remote machine by using **md5sum** to set fingerprints for each file. You then 
+compare the fingerprints generated for the file in the HPC and on your local machine. They must match!
+
 
  
 ## Task 1: Set up your semester workspace on the HPC
