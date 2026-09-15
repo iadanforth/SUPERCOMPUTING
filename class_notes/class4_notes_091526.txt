@@ -1,0 +1,25 @@
+Class 4: Streams, redirections and text tools 
+
+- *stdin* = programs source of data 
+- *stdout* = programs normal results 
+- *stderr* = programs error messages 
+
+- every command reads from stdin, writes to stdout and can produce stderr. Unless you rerout these streams using Unix, stdin typically comes from your keyboard while stdour/stderr print to your screen
+
+EXAMPLE: echo "Hello world."
+- here, the program is echo,
+- the stdin is "Hello world" bc that's what I type 
+- the stdout is the printing of "Hello world" on your computer screen 
+- the program worked, so no stderr, but if you were to get one, it would probably just be an empty screen 
+
+**REDIRECTION**
+- echo "blank" -> prints to screen
+- echo "blank" > newfile.txt -> creates a new file with this text 
+- echo "blank" >> newfile.txt -> appends to a file
+
+# run this code 
+echo "Hi mom" > transcript.txt
+echo "How are you?" >> transcript.txt
+wc -l transcript.text > transcript_wordcounts.txt
+**NOTE**
+- the wc -l flag gives you line counts 
