@@ -310,10 +310,12 @@ challenge.
 there is no data directory on GitHub**
 
 ```
+cd ~
+cd SUPERCOMPUTING/assignments/assignment_04
 git status
 # we don't want to push the .fna files to git hub
 # did not git add the entire data directory
-git add 
-
+git add script/ summary_output/
+git commit -m "add assignment_04, not the data"
 ```
 
