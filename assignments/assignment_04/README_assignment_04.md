@@ -101,7 +101,7 @@ SUPERCOMPUTING/gh_2.74.2_linux_amd64/bin/gh auth login
 - hit 'enter' to select 'Login with authentication token'
 - copy the authentication token
 
-# Task 6: Create another installation script (for setk)
+# Task 6: Create another installation script (for seqtk)
 ```
 cd programs/
 touch install_seqtk.sh
@@ -250,7 +250,7 @@ chmod +x summarize_fasta.sh
 ./summarize_fasta.sh /sciclone/home/iadanforth/SUPERCOMPUTING/assignments/assignment_04/data/GCF_000001735.4_TAIR10.1_genomic.fna
 ```
 
-# Task 10: Run the script on several files
+# Task 9: Run the script on several files
 The sequences that I downloaded from GenBank all correspond to Chlorovirus genomes, 
 one from each major groups. 
 
@@ -284,6 +284,26 @@ ls
 # open one to check that it looks good 
 nano GCF_000847045.1_ViralProj14564_genomic_summary.tab
 ```
+
+# Task 10: Verify your README file and reflection
+I initially misunderstood the assignment and set the variable $GH_BINARY as the full path 
+to the script 'install_gh.sh'. When I began writing the script for installing seqkt, I realized
+that this made no sense since it wouldn't call the actual program. I then went back and fixed 
+the file path to direct to the actual 'gh' program. I also ran into trouble when I tried to push my
+entire 'assignment_04' directory to GitHub because I had large .fna files left in the 'data' directory.
+To resolve this, I decided to delete the entire repository from the SUPERCOMPUTER, clone it 
+again, and then add all files except for the data directory within 'assignment_04'. This assignment
+also helped me to become much more conceptually comfortable with naming variables, calling them,
+and identifying places where this would be particularly useful. I think that some of the discussion
+in class was too abstract for me to really understand what the practical purpose of this is, but it 
+is very clear now. I also appreciated learning how to write and run a script. In a previous molecular
+evolution workshop that I attended, they repeatedly discussed how we could write scripts to automate
+analyses. I understood what that meant but not how I would actually do this in practice. My understanding of $PATH is that it simplifies the process of writing out where
+an item is stored. If I need to run the program 'gh', I don't want to repeatedly copy paste the entire path. 
+Also, the path for my computer will be different from the path for another computer. Having stored variable resolves this 
+challenge.
+
+
 
 # Task 11: Push to GitHub
 **I did not add the 'data' directory because it contains large files. Therefore, there 
