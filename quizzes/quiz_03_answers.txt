@@ -1,0 +1,9 @@
+QUIZ03 ANSWERS
+# name the file you are seekiing
+MYFILE="/sciclone/scr10/gzdata440/Fungal_seqs.fasta"
+
+# get the number of sequences (2034) and send it to a new file 
+echo "There are $(grep -c "^>" $MYFILE) sequences in the file:$MYFILE" > seq_count.txt
+
+# copy the file and put it in your current directory
+cp /sciclone/scr10/gzdata440/Fungal_seq.fasta ./
