@@ -1,5 +1,6 @@
 Class 7: Bash scripts, paths, and installing tools 
 **was at ISAAH**
+**LESSON 04**
 
 - instead of running the same 5-10 commands over and over again, you can wrap commands in scripts 
 - a bash script is just a plain text file of commands.
@@ -68,3 +69,19 @@ then add the programs location ot the $PATH so it can easily be run**
 ### Making a script 
 
 ### Making a program "executible"
+
+use the following to make a program executable 
+```
+chmod +x count_lines.sh
+```
+- But you can make this more specific by using numbers before the '.sh' file
+- E.g.; chmod 755 count_lines.sh
+
+run the script like this:
+```
+./count_lines.sh
+```
+
+### FOR LOOPS 
+
+**expand here**

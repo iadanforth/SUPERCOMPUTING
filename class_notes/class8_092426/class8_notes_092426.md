@@ -1,4 +1,6 @@
-Class 8 -- Using tools in practice 
+# Class 8 -- Using tools in practice 
+**was at ISAAH**
+**LESSON 05**
 
 # Topics
 - Parameter expansion how to and cheat sheet 
@@ -33,7 +35,7 @@ head -n 4 S092_S82_interleaved_chop_101.fastq
 I then had Claude make me a python script for generating a table of quality scores. 
 I saved this in 'programs' and created a variable in my .bashrc to call it from anywhere 
 ```
-QUAL=$(sed -n '4p' S096_S38_interleaved_chop_70.fastq)
+QUAL=$(sed -n '4p' S096_S38_L001_R1_sample.fastq)
 python3 "$QUAL_TBL" "$QUAL"
 ```
 
@@ -120,6 +122,9 @@ find/replace
 **String length**
 - ${#VAR}: gives length.
 
+**you don't need to memorize them all, just play with them. Claude likes to do 
+these all the time. Manipulating strings and making them look nicer for you**
+
 ## Practice with parameter expansion and explanations
 ```
 VAR="S090_S9_L001_R1_sample.fastq"
@@ -128,12 +133,14 @@ VAR="S090_S9_L001_R1_sample.fastq"
 echo ${VAR%_*}
 # strips the shortest possible match of "_*" from the end. 
 # finds the LAST underscore in the string 
-# and removes from there to the end 
+# and removes from there to the end
+# great for just pulling out file names
 > S090_S9_L001_R1
 
 echo ${VAR%%_*}
 # removes the longest possible match of _* from the end 
 # finds the FIRST underscore and removes everything after it
+# great for just getting sample number
 > S090
 
 echo ${VAR%%_*}_output.log
