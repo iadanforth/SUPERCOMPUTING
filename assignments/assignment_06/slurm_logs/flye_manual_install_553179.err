@@ -1,0 +1,100 @@
+Cloning into 'Flye'...
+Updating files:  75% (404/538)Updating files:  76% (409/538)Updating files:  77% (415/538)Updating files:  78% (420/538)Updating files:  79% (426/538)Updating files:  80% (431/538)Updating files:  81% (436/538)Updating files:  82% (442/538)Updating files:  83% (447/538)Updating files:  84% (452/538)Updating files:  85% (458/538)Updating files:  86% (463/538)Updating files:  87% (469/538)Updating files:  88% (474/538)Updating files:  89% (479/538)Updating files:  90% (485/538)Updating files:  91% (490/538)Updating files:  92% (495/538)Updating files:  93% (501/538)Updating files:  94% (506/538)Updating files:  95% (512/538)Updating files:  96% (517/538)Updating files:  97% (522/538)Updating files:  98% (528/538)Updating files:  99% (533/538)Updating files: 100% (538/538)Updating files: 100% (538/538), done.
+hit.c: In function ‘mm_gen_regs’:
+hit.c:74:25: warning: argument 1 range [18446744071562067968, 18446744073709551615] exceeds maximum object size 9223372036854775807 [-Walloc-size-larger-than=]
+   74 |         r = (mm_reg1_t*)calloc(n_u, sizeof(mm_reg1_t));
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from hit.c:2:
+/usr/include/stdlib.h:542:14: note: in a call to allocation function ‘calloc’ declared here
+  542 | extern void *calloc (size_t __nmemb, size_t __size)
+      |              ^~~~~~
+bam2bcf_indel.c: In function ‘bcf_call_gap_prep’:
+bam2bcf_indel.c:407:26: warning: argument 1 range [18446744071562067968, 18446744073709551615] exceeds maximum object size 9223372036854775807 [-Walloc-size-larger-than=]
+  407 |                     qq = calloc(qend - qbeg, 1);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~
+In file included from htslib-1.9/htslib/kstring.h:29,
+                 from htslib-1.9/htslib/vcf.h:40,
+                 from bam2bcf.h:31,
+                 from bam2bcf_indel.c:33:
+/usr/include/stdlib.h:542:14: note: in a call to allocation function ‘calloc’ declared here
+  542 | extern void *calloc (size_t __nmemb, size_t __size)
+      |              ^~~~~~
+bam_tview_curses.c:48:2: warning: #warning "No curses library is available; tview with curses is disabled." [-Wcpp]
+   48 | #warning "No curses library is available; tview with curses is disabled."
+      |  ^~~~~~~
+In function ‘string_ndup’,
+    inlined from ‘string_dup’ at cram/string_alloc.c:143:12:
+cram/string_alloc.c:151:5: warning: ‘strncpy’ output truncated before terminating nul copying as many bytes from a string as its length [-Wstringop-truncation]
+  151 |     strncpy(str, instr, len);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+cram/string_alloc.c: In function ‘string_dup’:
+cram/string_alloc.c:143:12: note: length computed here
+  143 |     return string_ndup(a_str, instr, strlen(instr));
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hts.c: In function ‘hts_idx_init’:
+hts.c:1386:59: warning: overflow in conversion from ‘uint32_t’ {aka ‘unsigned int’} to ‘int’ changes value from ‘idx->z.last_bin = 4294967295’ to ‘-1’ [-Woverflow]
+ 1386 |     idx->z.save_bin = idx->z.save_tid = idx->z.last_tid = idx->z.last_bin = 0xffffffffu;
+      |                                                           ^~~
+In function ‘full_path’,
+    inlined from ‘cram_write_SAM_hdr’ at cram/cram_io.c:3823:17:
+cram/cram_io.c:3748:13: warning: ‘strncpy’ specified bound 4096 equals destination size [-Wstringop-truncation]
+ 3748 |             strncpy(out, in, PATH_MAX);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+cram/cram_io.c: In function ‘cram_dopen’:
+cram/cram_io.c:4126:9: warning: ‘strncpy’ specified bound 20 equals destination size [-Wstringop-truncation]
+ 4126 |         strncpy(def->file_id, filename, 20);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from sequence/overlap.cpp:25:
+sequence/../common/bfcontainer.h: In instantiation of ‘BFContainer<T, ChunkSize>::BFIterator BFContainer<T, ChunkSize>::BFIterator::operator+(BFContainer<T, ChunkSize>::BFIterator::difference_type) const [with T = {anonymous}::KmerMatch; long unsigned int ChunkSize = 1048576; BFContainer<T, ChunkSize>::BFIterator::difference_type = long int]’:
+sequence/overlap.cpp:240:43:   required from here
+sequence/../common/bfcontainer.h:182:30: warning: implicitly-declared ‘constexpr BFContainer<{anonymous}::KmerMatch>::BFIterator::BFIterator(const BFContainer<{anonymous}::KmerMatch>::BFIterator&)’ is deprecated [-Wdeprecated-copy]
+  182 |                         auto tmp = *this;
+      |                              ^~~
+sequence/../common/bfcontainer.h:141:21: note: because ‘BFContainer<{anonymous}::KmerMatch>::BFIterator’ has user-provided ‘BFContainer<T, ChunkSize>::BFIterator& BFContainer<T, ChunkSize>::BFIterator::operator=(const BFContainer<T, ChunkSize>::BFIterator&) [with T = {anonymous}::KmerMatch; long unsigned int ChunkSize = 1048576]’
+  141 |         BFIterator& operator=(const BFIterator &rhs)
+      |                     ^~~~~~~~
+sequence/../common/bfcontainer.h:183:39: warning: implicitly-declared ‘constexpr BFContainer<{anonymous}::KmerMatch>::BFIterator::BFIterator(const BFContainer<{anonymous}::KmerMatch>::BFIterator&)’ is deprecated [-Wdeprecated-copy]
+  183 |                         return tmp += n;
+      |                                       ^
+sequence/../common/bfcontainer.h:141:21: note: because ‘BFContainer<{anonymous}::KmerMatch>::BFIterator’ has user-provided ‘BFContainer<T, ChunkSize>::BFIterator& BFContainer<T, ChunkSize>::BFIterator::operator=(const BFContainer<T, ChunkSize>::BFIterator&) [with T = {anonymous}::KmerMatch; long unsigned int ChunkSize = 1048576]’
+  141 |         BFIterator& operator=(const BFIterator &rhs)
+      |                     ^~~~~~~~
+sequence/../common/bfcontainer.h: In instantiation of ‘BFContainer<T, ChunkSize>::BFIterator BFContainer<T, ChunkSize>::BFIterator::operator-(BFContainer<T, ChunkSize>::BFIterator::difference_type) const [with T = {anonymous}::KmerMatch; long unsigned int ChunkSize = 1048576; BFContainer<T, ChunkSize>::BFIterator::difference_type = long int]’:
+/usr/include/c++/11/bits/stl_algo.h:1904:71:   required from ‘_RandomAccessIterator std::__unguarded_partition_pivot(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = BFContainer<{anonymous}::KmerMatch>::BFIterator; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<OverlapDetector::getSeqOverlaps(const FastaRecord&, bool, OvlpDivStats&, int) const::<lambda(const {anonymous}::KmerMatch&, const {anonymous}::KmerMatch&)> >]’
+/usr/include/c++/11/bits/stl_algo.h:1938:38:   required from ‘void std::__introsort_loop(_RandomAccessIterator, _RandomAccessIterator, _Size, _Compare) [with _RandomAccessIterator = BFContainer<{anonymous}::KmerMatch>::BFIterator; _Size = long int; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<OverlapDetector::getSeqOverlaps(const FastaRecord&, bool, OvlpDivStats&, int) const::<lambda(const {anonymous}::KmerMatch&, const {anonymous}::KmerMatch&)> >]’
+/usr/include/c++/11/bits/stl_algo.h:1954:25:   required from ‘void std::__sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = BFContainer<{anonymous}::KmerMatch>::BFIterator; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<OverlapDetector::getSeqOverlaps(const FastaRecord&, bool, OvlpDivStats&, int) const::<lambda(const {anonymous}::KmerMatch&, const {anonymous}::KmerMatch&)> >]’
+/usr/include/c++/11/bits/stl_algo.h:4875:18:   required from ‘void std::sort(_RAIter, _RAIter, _Compare) [with _RAIter = BFContainer<{anonymous}::KmerMatch>::BFIterator; _Compare = OverlapDetector::getSeqOverlaps(const FastaRecord&, bool, OvlpDivStats&, int) const::<lambda(const {anonymous}::KmerMatch&, const {anonymous}::KmerMatch&)>]’
+sequence/overlap.cpp:204:11:   required from here
+sequence/../common/bfcontainer.h:193:30: warning: implicitly-declared ‘constexpr BFContainer<{anonymous}::KmerMatch>::BFIterator::BFIterator(const BFContainer<{anonymous}::KmerMatch>::BFIterator&)’ is deprecated [-Wdeprecated-copy]
+  193 |                         auto tmp = *this;
+      |                              ^~~
+sequence/../common/bfcontainer.h:141:21: note: because ‘BFContainer<{anonymous}::KmerMatch>::BFIterator’ has user-provided ‘BFContainer<T, ChunkSize>::BFIterator& BFContainer<T, ChunkSize>::BFIterator::operator=(const BFContainer<T, ChunkSize>::BFIterator&) [with T = {anonymous}::KmerMatch; long unsigned int ChunkSize = 1048576]’
+  141 |         BFIterator& operator=(const BFIterator &rhs)
+      |                     ^~~~~~~~
+sequence/../common/bfcontainer.h:194:39: warning: implicitly-declared ‘constexpr BFContainer<{anonymous}::KmerMatch>::BFIterator::BFIterator(const BFContainer<{anonymous}::KmerMatch>::BFIterator&)’ is deprecated [-Wdeprecated-copy]
+  194 |                         return tmp -= n;
+      |                                       ^
+sequence/../common/bfcontainer.h:141:21: note: because ‘BFContainer<{anonymous}::KmerMatch>::BFIterator’ has user-provided ‘BFContainer<T, ChunkSize>::BFIterator& BFContainer<T, ChunkSize>::BFIterator::operator=(const BFContainer<T, ChunkSize>::BFIterator&) [with T = {anonymous}::KmerMatch; long unsigned int ChunkSize = 1048576]’
+  141 |         BFIterator& operator=(const BFIterator &rhs)
+      |                     ^~~~~~~~
+sequence/vertex_index.cpp: In member function ‘void KmerCounter::count(bool)’:
+sequence/vertex_index.cpp:380:28: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct std::atomic<unsigned char>’ with no trivial copy-assignment; use value-initialization instead [-Wclass-memaccess]
+  380 |                 std::memset(_flatCounter, 0, COUNTER_LEN);
+      |                 ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /sciclone/home/iadanforth/programs/Flye/lib/libcuckoo/cuckoohash_map.hh:8,
+                 from sequence/vertex_index.h:15,
+                 from sequence/vertex_index.cpp:12:
+/usr/include/c++/11/atomic:753:12: note: ‘struct std::atomic<unsigned char>’ declared here
+  753 |     struct atomic<unsigned char> : __atomic_base<unsigned char>
+      |            ^~~~~~~~~~~~~~~~~~~~~
+In file included from polishing/bubble_processor.cpp:9:
+polishing/bubble_processor.h: In constructor ‘BubbleProcessor::BubbleProcessor(const string&, const string&, bool, bool)’:
+polishing/bubble_processor.h:48:35: warning: ‘BubbleProcessor::_dinucFixer’ will be initialized after [-Wreorder]
+   48 |         const DinucleotideFixer   _dinucFixer;
+      |                                   ^~~~~~~~~~~
+polishing/bubble_processor.h:40:51: warning:   ‘bool BubbleProcessor::_verbose’ [-Wreorder]
+   40 |         bool                                      _verbose;
+      |                                                   ^~~~~~~~
+polishing/bubble_processor.cpp:21:1: warning:   when initialized here [-Wreorder]
+   21 | BubbleProcessor::BubbleProcessor(const std::string& subsMatPath,
+      | ^~~~~~~~~~~~~~~
