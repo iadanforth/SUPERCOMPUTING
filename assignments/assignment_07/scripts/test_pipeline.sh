@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 set -ueo pipefail
 
 bash ./scripts/01_download_data.sh ./data/SraRunTable.csv

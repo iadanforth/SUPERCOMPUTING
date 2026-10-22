@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 set -ueo pipefail
 
 # 1. Activate bbmap-env

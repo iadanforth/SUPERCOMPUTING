@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 set -ueo pipefail
 mkdir -p ./data/clean
 cd ./data/raw
